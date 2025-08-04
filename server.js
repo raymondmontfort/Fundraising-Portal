@@ -16,8 +16,8 @@ app.use(express.static('public'));
 const users = [
   {
     id: 1,
-    name: "Raymond Montfort",
-    email: "raymondmontfort07@gmail.com",
+    name: "Admin",
+    email: "admin@gmail.com",
     password: "password123", // In real app, this would be hashed
     referralCode: "raymond2025",
     totalDonations: 1250,
