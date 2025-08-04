@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising Intern Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login/Signup Section -->
+    <div id="auth-section" class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1><i class="fas fa-heart"></i> Fundraising Intern Portal</h1>
+                <p>Welcome to your fundraising dashboard</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+                <button class="tab-btn" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+            
+            <div id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" value="raymondmontfort07@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" value="password123">
+                </div>
+                <button class="auth-btn" onclick="login()">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </div>
+            
+            <div id="signup-form" class="auth-form hidden">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password">
+                </div>
+                <button class="auth-btn" onclick="signup()">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" class="dashboard-container hidden">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-heart"></i>
+                <span>Fundraising Portal</span>
+            </div>
+            <div class="nav-user">
+                <span id="user-name">Raymond Montfort</span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <div class="dashboard-content">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Raised</h3>
+                        <p id="total-amount">$1,250</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Referral Code</h3>
+                        <p id="referral-code">raymond2025</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Rewards Earned</h3>
+                        <p id="rewards-count">3/5</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="content-grid">
+                <!-- Rewards Section -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-medal"></i> Rewards & Achievements</h2>
+                    </div>
+                    <div class="rewards-grid" id="rewards-container">
+                        <!-- Rewards will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Recent Donations -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-history"></i> Recent Donations</h2>
+                    </div>
+                    <div class="donations-list" id="donations-container">
+                        <!-- Donations will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Add Donation Form -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-plus-circle"></i> Add Donation</h2>
+                    </div>
+                    <div class="add-donation-form">
+                        <div class="form-group">
+                            <label for="donation-amount">Amount ($)</label>
+                            <input type="number" id="donation-amount" placeholder="Enter amount" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="donor-name">Donor Name (Optional)</label>
+                            <input type="text" id="donor-name" placeholder="Anonymous">
+                        </div>
+                        <button class="add-donation-btn" onclick="addDonation()">
+                            <i class="fas fa-plus"></i> Add Donation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
