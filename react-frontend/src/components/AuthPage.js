@@ -11,7 +11,7 @@ const AuthPage = ({ onLogin }) => {
 
   // Login form state
   const [loginData, setLoginData] = useState({
-    email: 'raymondmontfort07@gmail.com',
+    email: 'admin@gmail.com',
     password: 'password123'
   });
 
