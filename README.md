@@ -94,7 +94,7 @@ node test-backend.js
 
 For testing purposes, you can use these credentials:
 
-**Email:** `raymondmontfort07@gmail.com`  
+**Email:** `admin@gmail.com`  
 **Password:** `password123`
 
 ## 🛠️ **Troubleshooting**
